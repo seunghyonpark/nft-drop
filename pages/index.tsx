@@ -300,6 +300,7 @@ const Home: NextPage = () => {
                         isDisabled={!canClaim || buttonLoading}
                         onError={(err) => {
                           console.error(err);
+                          console.log("err", err);
                           alert("Error claiming NFTs");
                         }}
                         onSuccess={() => {
