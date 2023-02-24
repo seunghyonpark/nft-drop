@@ -15,6 +15,7 @@ import type { NextPage } from "next";
 import { useMemo, useState } from "react";
 import styles from "../styles/Theme.module.css";
 import { parseIneligibility } from "../utils/parseIneligibility";
+import Image from "next/image";
 
 // Put Your NFT Drop Contract address from the dashboard here
 //const myNftDropContractAddress = "0x90E2dD8C48cA35534Dd70e3eC19B362cdf71981E";
@@ -328,6 +329,14 @@ const Home: NextPage = () => {
         className={styles.buttonGapTop}
       />
       */}
+
+      <Image
+        src="/logo.png"
+        alt="logo image"
+        width={500}
+        height={500}
+      />
+
     </div>
   );
 };
