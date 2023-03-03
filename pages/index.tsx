@@ -215,11 +215,45 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
+
+
+
+
       <div className={styles.mintInfoContainer}>
         {isLoading ? (
           <p>Loading...</p>
         ) : (
           <>
+
+
+            <div className={styles.mintContainer}>
+              {isSoldOut ? (
+                <div>
+                  <h2>Sold Out</h2>
+                </div>
+              ) : (
+                <Web3Button
+                  contractAddress={nftDrop?.getAddress() || ""}
+                  action={(cntr) => cntr.erc721.claim(quantity)}
+                  isDisabled={!canClaim || buttonLoading}
+                  onError={(err) => {
+                    console.error(err);
+                    console.log("err", err);
+                    alert("Error claiming NFTs");
+                  }}
+                  onSuccess={() => {
+                    setQuantity(1);
+
+                    console.log("Successfully claimed NFTs");
+                    alert("Successfully claimed NFTs");
+                  }}
+                >
+                  {buttonLoading ? "Loading..." : buttonText}
+                </Web3Button>
+              )}
+            </div>
+
+
             <div className={styles.infoSide}>
               {/* Title of your NFT Collection */}
               <h1>{contractMetadata?.name}</h1>
@@ -231,7 +265,9 @@ const Home: NextPage = () => {
 
             <div className={styles.imageSide}>
               {/* Image Preview of NFTs */}
-              <img
+              <Image
+                width={500}
+                height={500}
                 className={styles.image}
                 src={contractMetadata?.image}
                 alt={`${contractMetadata?.name} preview image`}
@@ -306,6 +342,8 @@ const Home: NextPage = () => {
                         }}
                         onSuccess={() => {
                           setQuantity(1);
+
+                          console.log("Successfully claimed NFTs");
                           alert("Successfully claimed NFTs");
                         }}
                       >
@@ -313,6 +351,7 @@ const Home: NextPage = () => {
                       </Web3Button>
                     )}
                   </div>
+
                 </>
               )}
             </div>
@@ -330,12 +369,14 @@ const Home: NextPage = () => {
       />
       */}
 
+      {/*
       <Image
         src="/logo.png"
         alt="logo image"
         width={500}
         height={500}
       />
+    */}
 
     </div>
   );
