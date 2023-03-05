@@ -186,6 +186,7 @@ const Home: NextPage = () => {
       return "Sold Out";
     }
 
+    
     if (canClaim) {
       const pricePerToken = BigNumber.from(
         activeClaimCondition.data?.currencyMetadata.value || 0
