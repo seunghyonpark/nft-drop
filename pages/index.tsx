@@ -1,4 +1,5 @@
 import {
+  useDisconnect,
   useActiveClaimConditionForWallet,
   useAddress,
   useClaimConditions,
@@ -35,6 +36,9 @@ const myNftDropContractAddress = "0x327dA22b2bCdfd6F4EE4269892bd39Fe6c637BcC";
 
 
 const Home: NextPage = () => {
+
+  const disconnect = useDisconnect();
+
   const { contract: nftDrop } = useContract(myNftDropContractAddress);
 
   const address = useAddress();
@@ -225,11 +229,10 @@ const Home: NextPage = () => {
     quantity,
   ]);
 
+
+
   return (
     <div className={styles.container}>
-
-
-
 
       <div className={styles.mintInfoContainer}>
         {isLoading ? (
@@ -244,6 +247,11 @@ const Home: NextPage = () => {
                   <h2>Sold Out</h2>
                 </div>
               ) : (
+
+                
+                <button onClick={disconnect}>Disconnect</button>
+
+                /*
                 <Web3Button
                   contractAddress={nftDrop?.getAddress() || ""}
                   action={(cntr) => cntr.erc721.claim(quantity)}
@@ -262,6 +270,10 @@ const Home: NextPage = () => {
                 >
                   {buttonLoading ? "Loading..." : buttonText}
                 </Web3Button>
+
+                */
+               
+
               )}
             </div>
 
