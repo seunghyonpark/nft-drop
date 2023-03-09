@@ -20,12 +20,12 @@ import Image from "next/image";
 // Put Your NFT Drop Contract address from the dashboard here
 //const myNftDropContractAddress = "0x90E2dD8C48cA35534Dd70e3eC19B362cdf71981E";
 
-const myNftDropContractAddress = "0x4309bA39e47D81583FF79487a2ebF51405a47353";
+//const myNftDropContractAddress = "0x4309bA39e47D81583FF79487a2ebF51405a47353";
 
 ////const myNftDropContractAddress = "0x04D6DaDE93F52dA2C3EFe78e24d9101D19744Fd6";
 
 
-//const myNftDropContractAddress = "0x327dA22b2bCdfd6F4EE4269892bd39Fe6c637BcC";
+const myNftDropContractAddress = "0x327dA22b2bCdfd6F4EE4269892bd39Fe6c637BcC";
 
 
 
