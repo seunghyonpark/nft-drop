@@ -25,8 +25,13 @@ import Image from "next/image";
 ////const myNftDropContractAddress = "0x04D6DaDE93F52dA2C3EFe78e24d9101D19744Fd6";
 
 
+// bnb chain testnet
 const myNftDropContractAddress = "0x327dA22b2bCdfd6F4EE4269892bd39Fe6c637BcC";
 
+
+///const myNftDropContractAddress = "0x25f73B1f10A0F8d5594263d4e62Ab62c7D2222a3";
+
+//const myNftDropContractAddress = "0xb622Dda2e51Fc5DFbC62E287430e02C8b690719f"; // polygon mainnet
 
 
 const Home: NextPage = () => {
@@ -326,7 +331,10 @@ const Home: NextPage = () => {
                     <button
                       className={`${styles.quantityControlButton}`}
                       onClick={() => setQuantity(quantity + 1)}
-                      disabled={quantity >= maxClaimable}
+
+                      //disabled={quantity >= maxClaimable}
+                      disabled={true}
+
                     >
                       +
                     </button>

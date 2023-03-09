@@ -5,7 +5,11 @@ import Head from "next/head";
 import ThirdwebGuideFooter from "../components/GitHubLink";
 
 // This is the chainId your dApp will work on.
-const activeChainId = ChainId.Mumbai;
+//const activeChainId = ChainId.Mumbai;
+
+const activeChainId = ChainId.BinanceSmartChainTestnet;
+
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
