@@ -17,6 +17,7 @@ import { useMemo, useState } from "react";
 import styles from "../styles/Theme.module.css";
 import { parseIneligibility } from "../utils/parseIneligibility";
 import Image from "next/image";
+import Link from 'next/link';
 
 // Put Your NFT Drop Contract address from the dashboard here
 //const myNftDropContractAddress = "0x90E2dD8C48cA35534Dd70e3eC19B362cdf71981E";
@@ -272,7 +273,7 @@ const Home: NextPage = () => {
                 </Web3Button>
 
                 */
-               
+
 
               )}
             </div>
@@ -344,8 +345,8 @@ const Home: NextPage = () => {
                       className={`${styles.quantityControlButton}`}
                       onClick={() => setQuantity(quantity + 1)}
 
-                      //disabled={quantity >= maxClaimable}
-                      disabled={true}
+                      disabled={quantity >= maxClaimable}
+                      //disabled={true}
 
                     >
                       +
@@ -377,6 +378,12 @@ const Home: NextPage = () => {
                         {buttonLoading ? "Loading..." : buttonText}
                       </Web3Button>
                     )}
+
+                    <div>
+                    <Link href={"https://testnets.opensea.io/collection/cracle-rabbit-nft"} className="w-64 h-16 bg-gradient-to-r from-[#08FF08] to-[#008013] rounded-lg flex items-center justify-center">
+                      <span className="text-gray-200 text-2xl ">OpenSea</span>
+                    </Link>
+                    </div>
                   </div>
 
                 </>
